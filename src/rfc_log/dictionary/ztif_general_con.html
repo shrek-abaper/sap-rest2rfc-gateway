@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1" />
+<title>Dictionary object- ZTIF_GENERAL_CON</title>
+<style type="text/css">
+  th{text-align:left}
+  .cell{
+     font-family:"Courier New", Courier, monospace;
+     color:#000;
+     font-size:12px;
+     background-color:#F2F4F7;
+  }
+  .cell td { border: thin solid #ccc; }
+</style>
+<style type="text/css">
+  .normal{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px }
+  .footer{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px; text-align: center }
+  h2{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:16px; font-weight:800 }
+  h3{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:14px; font-weight:800 }
+  .outerTable{
+   background-color:#E0E7ED;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-right-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+  .innerTable{
+   background-color:#F2F4F7;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-bottom-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+</style>
+</head>
+<body>
+  <table class="outerTable">
+    <tr>
+      <td><h2>Table: ZTIF_GENERAL_CON</h2>
+  <h3>Description: 通用接口服务配置</h3></td>
+    </tr>
+    <tr>
+      <td><!--This is where our main table begins  -->
+<table class="innerTable">
+<tr>
+  <th>Row</th>
+  <th>Field name</th>
+  <th>Position</th>
+  <th>Key</th>
+  <th>Data element</th>
+  <th>Domain</th>
+  <th>Datatype</th>
+  <th>Length</th>
+  <th>Lowercase</th>
+  <th>Domain text</th>
+</tr>
+<tr class="cell">
+  <td> 1</td>
+  <td>MANDT</td>
+  <td>1</td>
+  <td>X</td>
+  <td>MANDT</td>
+  <td>MANDT</td>
+  <td>CLNT</td>
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>Client</td>
+</tr>
+<tr class="cell">
+  <td> 2</td>
+  <td>IFCODE</td>
+  <td>2</td>
+  <td>X</td>
+  <td>ZIFCODE</td>
+  <td>CHAR6</td>
+  <td>CHAR</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>接口编码</td>
+</tr>
+<tr class="cell">
+  <td> 3</td>
+  <td>IFNAME</td>
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>ZIFNAME</td>
+  <td>TEXT60</td>
+  <td>CHAR</td>
+  <td>60</td>
+  <td>X</td>
+  <td>接口名称</td>
+</tr>
+<tr class="cell">
+  <td> 4</td>
+  <td>TASKFM</td>
+  <td>4</td>
+  <td>&nbsp;</td>
+  <td>RS38L_FNAM</td>
+  <td>FUNCNAME</td>
+  <td>CHAR</td>
+  <td>30</td>
+  <td>&nbsp;</td>
+  <td>Name of Function Module</td>
+</tr>
+<tr class="cell">
+  <td> 5</td>
+  <td>LOGFLG</td>
+  <td>5</td>
+  <td>&nbsp;</td>
+  <td>ZE_LOGFLG</td>
+  <td>XFELD</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>日志</td>
+</tr>
+<tr class="cell">
+  <td> 6</td>
+  <td>ACTFLG</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>ZE_ACTFLG</td>
+  <td>XFELD</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>激活</td>
+</tr>
+<tr class="cell">
+  <td> 7</td>
+  <td>IFTYPE</td>
+  <td>7</td>
+  <td>&nbsp;</td>
+  <td>ZE_IFTYPE</td>
+  <td>ZD_IFTYPE</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>接口类型</td>
+</tr>
+<tr class="cell">
+  <td> 8</td>
+  <td>MSGFOM</td>
+  <td>8</td>
+  <td>&nbsp;</td>
+  <td>ZE_MSGFOM</td>
+  <td>ZD_MSGFOM</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>消息格式</td>
+</tr>
+      </table>
+     </td>
+   </tr>
+<br/>
+  <table class="outerTable">
+    <tr>
+      <td><h2>Fixed Domain Values </h2>
+    </tr>
+    <tr>
+      <td><!--This is where our main table begins  -->
+<table class="innerTable">
+<tr>
+  <th>Domain Name</th>
+  <th>Value Low</th>
+  <th>Value High</th>
+  <th>Text</th>
+</tr>
+<tr class="cell">
+  <td>XFELD</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Yes</td>
+</tr>
+<tr class="cell">
+  <td>XFELD</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>No</td>
+</tr>
+<tr class="cell">
+  <td>XFELD</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Yes</td>
+</tr>
+<tr class="cell">
+  <td>XFELD</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>No</td>
+</tr>
+<tr class="cell">
+  <td>ZD_IFTYPE</td>
+  <td>I</td>
+  <td>&nbsp;</td>
+  <td>Inbound</td>
+</tr>
+<tr class="cell">
+  <td>ZD_IFTYPE</td>
+  <td>O</td>
+  <td>&nbsp;</td>
+  <td>Outbound</td>
+</tr>
+<tr class="cell">
+  <td>ZD_MSGFOM</td>
+  <td>J</td>
+  <td>&nbsp;</td>
+  <td>JSON</td>
+</tr>
+<tr class="cell">
+  <td>ZD_MSGFOM</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>XML</td>
+</tr>
+      </table>
+     </td>
+   </tr>
+   <tr>
+<td class="footer">Extracted by Mass Download version 1.5.5 - E.G.Mellodew. 1998-2026. Sap Release 750</td>
+   </tr>
+</table>
+</body>
+</html>

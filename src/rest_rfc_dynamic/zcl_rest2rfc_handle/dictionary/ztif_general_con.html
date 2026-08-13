@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1" />
+<title>Dictionary object- ZTIF_GENERAL_CON</title>
+<style type="text/css">
+  th{text-align:left}
+  .cell{
+     font-family:"Courier New", Courier, monospace;
+     color:#000;
+     font-size:12px;
+     background-color:#F2F4F7;
+  }
+  .cell td { border: thin solid #ccc; }
+</style>
+<style type="text/css">
+  .normal{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px }
+  .footer{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px; text-align: center }
+  h2{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:16px; font-weight:800 }
+  h3{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:14px; font-weight:800 }
+  .outerTable{
+   background-color:#E0E7ED;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-right-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+  .innerTable{
+   background-color:#F2F4F7;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-bottom-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+</style>
+</head>
+<body>
+  <table class="outerTable">
+    <tr>
+      <td><h2>Table: ZTIF_GENERAL_CON</h2>
+  <h3>Description: 通用接口服务配置</h3></td>
+    </tr>
+    <tr>
+      <td><!--This is where our main table begins  -->
+<table class="innerTable">
+<tr>
+  <th>Row</th>
+  <th>Field name</th>
+  <th>Position</th>
+  <th>Key</th>
+  <th>Data element</th>
+  <th>Domain</th>
+  <th>Datatype</th>
+  <th>Length</th>
+  <th>Lowercase</th>
+  <th>Domain text</th>
+</tr>
+<tr class="cell">
+  <td> 1</td>
+  <td>MANDT</td>
+  <td>1</td>
+  <td>X</td>
+  <td>MANDT</td>
+  <td>MANDT</td>
+  <td>CLNT</td>
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>Client</td>
+</tr>
+<tr class="cell">
+  <td> 2</td>
+  <td>IFCODE</td>
+  <td>2</td>
+  <td>X</td>
+  <td>ZE_INTERFACE_ID</td>
+  <td>CHAR10</td>
+  <td>CHAR</td>
+  <td>10</td>
+  <td>&nbsp;</td>
+  <td>Interface ID</td>
+</tr>
+<tr class="cell">
+  <td> 3</td>
+  <td>IFNAME</td>
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>TXT50</td>
+  <td>TEXT50</td>
+  <td>CHAR</td>
+  <td>50</td>
+  <td>X</td>
+  <td>Name</td>
+</tr>
+<tr class="cell">
+  <td> 4</td>
+  <td>TASKFM</td>
+  <td>4</td>
+  <td>&nbsp;</td>
+  <td>RS38L_FNAM</td>
+  <td>FUNCNAME</td>
+  <td>CHAR</td>
+  <td>30</td>
+  <td>&nbsp;</td>
+  <td>Name of Function Module</td>
+</tr>
+<tr class="cell">
+  <td> 5</td>
+  <td>COMMITMODE</td>
+  <td>5</td>
+  <td>&nbsp;</td>
+  <td>BANK_DTE_CD_FLAG</td>
+  <td>BANK_CD_MARK</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>Flag 'X' = Active, ' ' = Inactive</td>
+</tr>
+<tr class="cell">
+  <td> 6</td>
+  <td>LOGFLG</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>BANK_DTE_CD_FLAG</td>
+  <td>BANK_CD_MARK</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>Flag 'X' = Active, ' ' = Inactive</td>
+</tr>
+<tr class="cell">
+  <td> 7</td>
+  <td>ACTFLG</td>
+  <td>7</td>
+  <td>&nbsp;</td>
+  <td>BANK_DTE_CD_FLAG</td>
+  <td>BANK_CD_MARK</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>Flag 'X' = Active, ' ' = Inactive</td>
+</tr>
+<tr class="cell">
+  <td> 8</td>
+  <td>IFTYPE</td>
+  <td>8</td>
+  <td>&nbsp;</td>
+  <td>ZE_IN_OR_OUT</td>
+  <td>ZD_IN_OR_OUT</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>inbound/outbound</td>
+</tr>
+<tr class="cell">
+  <td> 9</td>
+  <td>MSGFOM</td>
+  <td>9</td>
+  <td>&nbsp;</td>
+  <td>ZE_TRANS_TYPE</td>
+  <td>ZD_TRANS_TYPE</td>
+  <td>CHAR</td>
+  <td>1</td>
+  <td>&nbsp;</td>
+  <td>Transport type</td>
+</tr>
+      </table>
+     </td>
+   </tr>
+<br/>
+  <table class="outerTable">
+    <tr>
+      <td><h2>Fixed Domain Values </h2>
+    </tr>
+    <tr>
+      <td><!--This is where our main table begins  -->
+<table class="innerTable">
+<tr>
+  <th>Domain Name</th>
+  <th>Value Low</th>
+  <th>Value High</th>
+  <th>Text</th>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Selected</td>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>Not Selected</td>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Selected</td>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>Not Selected</td>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Selected</td>
+</tr>
+<tr class="cell">
+  <td>BANK_CD_MARK</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>Not Selected</td>
+</tr>
+<tr class="cell">
+  <td>ZD_IN_OR_OUT</td>
+  <td>I</td>
+  <td>&nbsp;</td>
+  <td>inbound</td>
+</tr>
+<tr class="cell">
+  <td>ZD_IN_OR_OUT</td>
+  <td>O</td>
+  <td>&nbsp;</td>
+  <td>outbound</td>
+</tr>
+<tr class="cell">
+  <td>ZD_TRANS_TYPE</td>
+  <td>W</td>
+  <td>&nbsp;</td>
+  <td>Web Service call</td>
+</tr>
+<tr class="cell">
+  <td>ZD_TRANS_TYPE</td>
+  <td>R</td>
+  <td>&nbsp;</td>
+  <td>RFC call</td>
+</tr>
+<tr class="cell">
+  <td>ZD_TRANS_TYPE</td>
+  <td>J</td>
+  <td>&nbsp;</td>
+  <td>Json http call</td>
+</tr>
+<tr class="cell">
+  <td>ZD_TRANS_TYPE</td>
+  <td>X</td>
+  <td>&nbsp;</td>
+  <td>Xml web service call</td>
+</tr>
+      </table>
+     </td>
+   </tr>
+   <tr>
+<td class="footer">Extracted by Mass Download version 1.5.5 - E.G.Mellodew. 1998-2026. Sap Release 756</td>
+   </tr>
+</table>
+</body>
+</html>

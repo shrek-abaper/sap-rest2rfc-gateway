@@ -1,0 +1,60 @@
+# SAP REST2RFC Gateway
+
+> English | [中文（默认）](README.md)
+
+A set of ABAP gateway solutions that expose SAP RFC / BAPI as HTTP REST endpoints, offering two complementary implementation routes, plus shared XML processing infrastructure and a unified interface call logging system.
+
+## Core Capabilities
+
+| Directory | Capability | Use Case | Docs |
+|---|---|---|---|
+| `src/rest_rfc_dynamic` | **Dynamic reflection gateway** | Expose any RFC / BAPI registered in the config table as a JSON API with zero code changes | [README](src/rest_rfc_dynamic/README.md) (Chinese) |
+| `src/rest_rfc_typed` | **Typed contract gateway** | Requires a fixed `REQUEST`/`RESPONSE` structure contract, also supports XML Web Service | [README](src/rest_rfc_typed/README.md) (Chinese) |
+| `src/rfc_log` | **Function-level logging macros** | Self-service JSON snapshot logging of import/export parameters inside a Function Module | [README](src/rfc_log/README.md) (Chinese) |
+
+> Note: the three capability-specific READMEs above are written in Chinese only for now.
+
+## Directory Layout
+
+```
+src/
+├── core/                  # Shared infrastructure: XML serialization base class + ZRIF_GENERAL_LOG viewer report
+├── rest_rfc_dynamic/      # Dynamic reflection gateway (ZCL_REST2RFC_HANDLE / ZCL_REST2RFC_BIND) + rest2rfc_meta.py CLI
+├── rest_rfc_typed/        # Typed contract gateway (ZCL_HTTP_HANDLE)
+└── rfc_log/               # RFC function-level logging macros (zfmparasaveasjson / zfmparasavevariate)
+```
+
+## Choosing Between Dynamic and Typed
+
+Both routes solve the same problem (exposing RFC/BAPI over HTTP) but with different trade-offs:
+
+- **Dynamic (reflection-based)**: Does not require the target function to follow any naming contract. Parameter binding is resolved at runtime via `RFC_GET_FUNCTION_INTERFACE_P` against the real interface metadata; adding a new interface only requires a new row in the config table. The trade-off is a dependency on `/UI2/CL_JSON=>GENERATE` for JSON parsing, which has several known limitations (see the sub-directory README).
+- **Typed (contract-based)**: Requires the exposed function to have exactly two DDIC structure parameters: `IMPORTING REQUEST` + `EXPORTING RESPONSE`. This sacrifices the "reuse any BAPI with zero changes" flexibility in exchange for a versionable contract, no field-by-field parsing ambiguity, and additional support for XML payloads and Base64 binary transport.
+
+Both routes share the same routing config table `ZTIF_GENERAL_CON` and log table `ZTIF_GENERAL_LOG` (field details in each directory's `dictionary/*.html`), so you can decide per-interface which route to use without conflict.
+
+## Dependencies and Prerequisites
+
+- `SAP_BASIS >= 7.40` is recommended (the code uses newer ABAP syntax such as inline declarations and string templates).
+- Depends on `/UI2/CL_JSON` (shipped with the `SAP_UI` add-on — **not** a `SAP_BASIS` standard object; older ECC backends may not have it). For availability checks and the fallback chain, see [ABAP JSON Dependency and Fallback Chain](src/core/abap-json-dependency.en.md).
+- Two custom tables must be maintained beforehand:
+  - `ZTIF_GENERAL_CON`: interface routing / switch configuration table (`IFCODE` as key, `TASKFM` points to the target Function Module, `ACTFLG`/`LOGFLG` control activation and logging).
+  - `ZTIF_GENERAL_LOG`: interface call log table (inbound/outbound payloads, status code, calling user, etc.), viewable via the `ZRIF_GENERAL_LOG` report (in `src/core`).
+
+## Security and Compliance Conventions
+
+The following are conventions repeatedly emphasized in the code comments — they are requirements, not optional suggestions:
+
+- **Authorization is not delegated to the gateway layer**: authorization checks must be implemented inside the exposed function itself; the gateway does not perform business-level authorization.
+- **The response message is read-only, not a decision signal**: `RESPONSE-MESSAGE` is for humans only. Callers must not use it programmatically (use the `RESULT` enum instead), and the message text must never embed connection strings, usernames, internal hostnames, or other sensitive information.
+- **Transaction boundaries must be explicit**: in dynamic mode, the config table's `COMMITMODE` field explicitly declares who owns the transaction (gateway / the function itself / read-only); in typed mode, the transaction boundary belongs entirely to the called function — the gateway makes no implicit commit assumptions.
+
+## Known Limitations
+
+- Dynamic mode depends on `/UI2/CL_JSON=>GENERATE` for JSON parsing, which has known limitations: empty objects/arrays cannot be distinguished, scalars degrade to strings, duplicate keys are silently merged, and binary fields are not currently supported for implicit conversion. See [`src/rest_rfc_dynamic/README.md`](src/rest_rfc_dynamic/README.md) for details.
+- `ZFM_RFCTYPED_EXAMPLE` (typed) and `ZFM_RFCLOG_EXAMPLE` (rfc_log) are both contract example skeletons without runnable business logic; they must be implemented following the pattern described in their comments.
+- `ZCL_HTTP_HANDLE` (typed) and `ZCL_REST2RFC_HANDLE` (dynamic) share a fair amount of duplicated code (URI parsing, logging, etc.) that has not yet been factored into a common base class.
+
+## License
+
+TBD

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1" />
+<title>Dictionary object- ZTIF_GENERAL_LOG</title>
+<style type="text/css">
+  th{text-align:left}
+  .cell{
+     font-family:"Courier New", Courier, monospace;
+     color:#000;
+     font-size:12px;
+     background-color:#F2F4F7;
+  }
+  .cell td { border: thin solid #ccc; }
+</style>
+<style type="text/css">
+  .normal{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px }
+  .footer{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:12px; text-align: center }
+  h2{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:16px; font-weight:800 }
+  h3{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:14px; font-weight:800 }
+  .outerTable{
+   background-color:#E0E7ED;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-right-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+  .innerTable{
+   background-color:#F2F4F7;
+   width:100%;
+   border-top-width: thin;
+   border-right-width: thin;
+   border-bottom-width: thin;
+   border-left-width: thin;
+   border-top-style: solid;
+   border-right-style: solid;
+   border-bottom-style: solid;
+   border-left-style: solid;
+  }
+</style>
+</head>
+<body>
+  <table class="outerTable">
+    <tr>
+      <td><h2>Table: ZTIF_GENERAL_LOG</h2>
+  <h3>Description: 通用接口服务日志</h3></td>
+    </tr>
+    <tr>
+      <td><!--This is where our main table begins  -->
+<table class="innerTable">
+<tr>
+  <th>Row</th>
+  <th>Field name</th>
+  <th>Position</th>
+  <th>Key</th>
+  <th>Data element</th>
+  <th>Domain</th>
+  <th>Datatype</th>
+  <th>Length</th>
+  <th>Lowercase</th>
+  <th>Domain text</th>
+</tr>
+<tr class="cell">
+  <td> 1</td>
+  <td>MANDT</td>
+  <td>1</td>
+  <td>X</td>
+  <td>MANDT</td>
+  <td>MANDT</td>
+  <td>CLNT</td>
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>Client</td>
+</tr>
+<tr class="cell">
+  <td> 2</td>
+  <td>IFCODE</td>
+  <td>2</td>
+  <td>X</td>
+  <td>ZIFCODE</td>
+  <td>CHAR6</td>
+  <td>CHAR</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>接口编码</td>
+</tr>
+<tr class="cell">
+  <td> 3</td>
+  <td>SERINO</td>
+  <td>3</td>
+  <td>X</td>
+  <td>SYSUUID_C32</td>
+  <td>SYSUUID_C32</td>
+  <td>CHAR</td>
+  <td>32</td>
+  <td>&nbsp;</td>
+  <td>16 Byte UUID in 32 Characters (Hexadecimal Encoded)</td>
+</tr>
+<tr class="cell">
+  <td> 4</td>
+  <td>SENDTM</td>
+  <td>4</td>
+  <td>&nbsp;</td>
+  <td>PRCT_TIMESTAMP_CHAR</td>
+  <td>&nbsp;</td>
+  <td>CHAR</td>
+  <td>14</td>
+  <td>&nbsp;</td>
+  <td>Timestamp Field (JJJJMMTTHHMMSS), Filed as CHAR14</td>
+</tr>
+<tr class="cell">
+  <td> 5</td>
+  <td>DATUM</td>
+  <td>5</td>
+  <td>&nbsp;</td>
+  <td>DATUM</td>
+  <td>DATUM</td>
+  <td>DATS</td>
+  <td>8</td>
+  <td>&nbsp;</td>
+  <td>Date</td>
+</tr>
+<tr class="cell">
+  <td> 6</td>
+  <td>IBTIM</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>CCIHE_IMPTIME</td>
+  <td>TIME</td>
+  <td>TIMS</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>Time of Import</td>
+</tr>
+<tr class="cell">
+  <td> 7</td>
+  <td>OBTIM</td>
+  <td>7</td>
+  <td>&nbsp;</td>
+  <td>LXEEXPHEAD_EXPTIME</td>
+  <td>SYTIME</td>
+  <td>TIMS</td>
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>Export Time</td>
+</tr>
+<tr class="cell">
+  <td> 8</td>
+  <td>UNAME</td>
+  <td>8</td>
+  <td>&nbsp;</td>
+  <td>UNAME</td>
+  <td>UNAME</td>
+  <td>CHAR</td>
+  <td>12</td>
+  <td>&nbsp;</td>
+  <td>User Name</td>
+</tr>
+<tr class="cell">
+  <td> 9</td>
+  <td>MSGIN</td>
+  <td>9</td>
+  <td>&nbsp;</td>
+  <td>MDM_GX_INPUTPARAM</td>
+  <td>MDM_GX_INPUTPARAM</td>
+  <td>STRG</td>
+  <td>0</td>
+  <td>X</td>
+  <td>Input Parameter</td>
+</tr>
+<tr class="cell">
+  <td>10</td>
+  <td>MSGOT</td>
+  <td>10</td>
+  <td>&nbsp;</td>
+  <td>MDM_GX_INPUTPARAM</td>
+  <td>MDM_GX_INPUTPARAM</td>
+  <td>STRG</td>
+  <td>0</td>
+  <td>X</td>
+  <td>Input Parameter</td>
+</tr>
+<tr class="cell">
+  <td>11</td>
+  <td>REQRES</td>
+  <td>11</td>
+  <td>&nbsp;</td>
+  <td>CLB_RESULT_CODE</td>
+  <td>&nbsp;</td>
+  <td>NUMC</td>
+  <td>4</td>
+  <td>&nbsp;</td>
+  <td>Result Code (NUMC4)</td>
+</tr>
+<tr class="cell">
+  <td>12</td>
+  <td>REQMSG</td>
+  <td>12</td>
+  <td>&nbsp;</td>
+  <td>SWR_MSGTXT</td>
+  <td>TEXT200</td>
+  <td>CHAR</td>
+  <td>200</td>
+  <td>X</td>
+  <td>Workflow Interfaces: Message Text</td>
+</tr>
+      </table>
+     </td>
+   </tr>
+<br/>
+   <tr>
+<td class="footer">Extracted by Mass Download version 1.5.5 - E.G.Mellodew. 1998-2026. Sap Release 750</td>
+   </tr>
+</table>
+</body>
+</html>

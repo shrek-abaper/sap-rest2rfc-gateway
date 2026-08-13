@@ -49,6 +49,16 @@ The following are conventions repeatedly emphasized in the code comments — the
 - **The response message is read-only, not a decision signal**: `RESPONSE-MESSAGE` is for humans only. Callers must not use it programmatically (use the `RESULT` enum instead), and the message text must never embed connection strings, usernames, internal hostnames, or other sensitive information.
 - **Transaction boundaries must be explicit**: in dynamic mode, the config table's `COMMITMODE` field explicitly declares who owns the transaction (gateway / the function itself / read-only); in typed mode, the transaction boundary belongs entirely to the called function — the gateway makes no implicit commit assumptions.
 
+## Raw Payload Logging and Extensibility
+
+The log table `ZTIF_GENERAL_LOG` retains the full inbound / outbound raw payloads, status code, and calling user of every interface call (viewable via the `ZRIF_GENERAL_LOG` report). This raw payload record is itself a foundation for downstream business capabilities that can be built incrementally as needed, for example:
+
+- **Failure reprocessing**: replay the original inbound payload for failed or abnormal calls without the caller having to re-issue the request.
+- **Audit and SLA analytics**: compliance auditing, latency distribution, and success-rate analysis based on historical payloads.
+- **Payload archival and troubleshooting**: long-term retention for post-incident reconstruction and fault isolation.
+
+These capabilities are not built into the current implementation and are intentionally left for integrators to build per their business needs.
+
 ## Known Limitations
 
 - Dynamic mode depends on `/UI2/CL_JSON=>GENERATE` for JSON parsing, which has known limitations: empty objects/arrays cannot be distinguished, scalars degrade to strings, duplicate keys are silently merged, and binary fields are not currently supported for implicit conversion. See [`src/rest_rfc_dynamic/README.md`](src/rest_rfc_dynamic/README.md) for details.

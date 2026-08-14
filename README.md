@@ -1,16 +1,16 @@
 # SAP REST2RFC Gateway
 
-> 中文（默认） | [English](README.en.md)
+> 中文 | [English](README.en.md)
 
 一组把 SAP RFC / BAPI 暴露为 HTTP REST 接口的 ABAP 网关方案，提供两条互补的实现路线，外加共享的 XML 处理基础设施与统一的接口调用日志体系。
 
 ## 核心能力
 
-| 目录 | 能力 | 适用场景 | 文档 |
-|---|---|---|---|
-| `src/rest_rfc_dynamic` | **动态反射网关** | 任意已在配置表注册的 RFC / BAPI，零改造暴露为 JSON API | [查看 README](src/rest_rfc_dynamic/README.md) |
-| `src/rest_rfc_typed` | **类型化契约网关** | 要求 `REQUEST`/`RESPONSE` 固定结构契约，兼容 XML Web Service | [查看 README](src/rest_rfc_typed/README.md) |
-| `src/rfc_log` | **函数级日志埋点宏** | 在 Function Module 内部自助记录入参 / 出参 JSON 快照 | [查看 README](src/rfc_log/README.md) |
+| 目录                   | 能力                 | 适用场景                                                     | 文档                                          |
+| ---------------------- | -------------------- | ------------------------------------------------------------ | --------------------------------------------- |
+| `src/rest_rfc_dynamic` | **动态反射网关**     | 任意已在配置表注册的 RFC / BAPI，零改造暴露为 JSON API       | [查看 README](src/rest_rfc_dynamic/README.md) |
+| `src/rest_rfc_typed`   | **类型化契约网关**   | 要求 `REQUEST`/`RESPONSE` 固定结构契约，兼容 XML Web Service | [查看 README](src/rest_rfc_typed/README.md)   |
+| `src/rfc_log`          | **函数级日志埋点宏** | 在 Function Module 内部自助记录入参 / 出参 JSON 快照         | [查看 README](src/rfc_log/README.md)          |
 
 ## 目录结构
 

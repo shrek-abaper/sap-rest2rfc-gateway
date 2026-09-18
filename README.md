@@ -25,9 +25,9 @@
 
 **[核心能力](#核心能力)** &nbsp;·&nbsp; **[如何选择](#如何选择-dynamic-还是-typed)** &nbsp;·&nbsp; **[依赖与前置条件](#依赖与前置条件)** &nbsp;·&nbsp; **[安全与合规约定](#安全与合规约定)** &nbsp;·&nbsp; **[原始报文与扩展](#原始报文记录与后续扩展)** &nbsp;·&nbsp; **[已知限制](#已知限制)**
 
-</div>
+中文 &nbsp;·&nbsp; [English](README.en.md)
 
-> 中文 | [English](README.en.md)
+</div>
 
 ---
 

@@ -25,9 +25,9 @@
 
 **[Core Capabilities](#core-capabilities)** &nbsp;·&nbsp; **[Choosing Between Routes](#choosing-between-dynamic-and-typed)** &nbsp;·&nbsp; **[Dependencies](#dependencies-and-prerequisites)** &nbsp;·&nbsp; **[Security Conventions](#security-and-compliance-conventions)** &nbsp;·&nbsp; **[Payload Logging & Extensibility](#raw-payload-logging-and-extensibility)** &nbsp;·&nbsp; **[Known Limitations](#known-limitations)**
 
-</div>
+English &nbsp;·&nbsp; [中文（默认）](README.md)
 
-> English | [中文（默认）](README.md)
+</div>
 
 ---
 

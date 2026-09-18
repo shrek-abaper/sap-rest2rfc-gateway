@@ -1,8 +1,31 @@
 # SAP REST2RFC Gateway
 
+[![GitHub Stars](https://img.shields.io/github/stars/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=FFD700&logo=github&logoColor=white&label=Stars)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=3E40C9&logo=github&logoColor=white&label=Forks)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/network/members)
+[![Contributors](https://img.shields.io/github/contributors/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=2EA043&logo=github&logoColor=white)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=0066CC&logo=github&logoColor=white)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/commits/main)
+[![ABAP](https://img.shields.io/badge/ABAP-pure%20ABAP-0E83CD?style=flat-square&logo=sap&logoColor=white)](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm)
+[![SAP_BASIS](https://img.shields.io/badge/SAP%20BASIS-%E2%89%A57.40-0FAAFF?style=flat-square&logo=sap&logoColor=white)](https://support.sap.com/en/product/versions.html)
+
+### An ABAP Gateway That Turns SAP RFC / BAPI into HTTP REST Endpoints
+
+#### _Pure ABAP, zero extra middleware — the RFC-to-REST bridge lives inside the SAP system itself._
+
+> No SAP PO/PI, no standalone integration middleware. Any registered RFC / BAPI can be exposed as a JSON API with a single config-table row and zero code changes; contract-first interfaces use a fixed `REQUEST`/`RESPONSE` structure with XML payloads and Base64 binary transport. Both routes share one routing table and full payload logging — choose per interface, without conflict.
+
+**Dynamic Reflection · Typed Contracts · JSON / XML Payloads · Base64 Binary Transport**
+
+**Unified Routing Config · Full Payload Logging · Explicit Transaction Boundaries · Auth Stays in the Business Function**
+
+**Pure ABAP · Zero-Middleware Deployment · Per-Interface Route Choice · Auditable and Replayable**
+
+#### Built for Integration Teams Exposing SAP Functionality Safely and Under Control
+
+**[Core Capabilities](#core-capabilities)** · **[Choosing Between Routes](#choosing-between-dynamic-and-typed)** · **[Dependencies](#dependencies-and-prerequisites)** · **[Security Conventions](#security-and-compliance-conventions)** · **[Payload Logging & Extensibility](#raw-payload-logging-and-extensibility)** · **[Known Limitations](#known-limitations)**
+
 > English | [中文（默认）](README.md)
 
-A set of ABAP gateway solutions that expose SAP RFC / BAPI as HTTP REST endpoints, offering two complementary implementation routes, plus shared XML processing infrastructure and a unified interface call logging system.
+---
 
 ## Core Capabilities
 

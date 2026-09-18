@@ -1,3 +1,5 @@
+<div align="center">
+
 # SAP REST2RFC Gateway
 
 [![GitHub Stars](https://img.shields.io/github/stars/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=FFD700&logo=github&logoColor=white&label=Stars)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/stargazers)
@@ -9,19 +11,21 @@
 
 ### 把 SAP RFC / BAPI 直接变成 HTTP REST 接口的 ABAP 网关
 
-#### _纯 ABAP 实现、零额外中间件，在 SAP 系统内部完成 RFC 到 REST 的桥接。_
+#### *纯 ABAP 实现、零额外中间件，在 SAP 系统内部完成 RFC 到 REST 的桥接。*
 
 > 不需要 SAP PO/PI，不需要独立集成中间件。任意已注册的 RFC / BAPI 均可通过配置表零改造暴露为 JSON API；要求强契约的接口则走固定 `REQUEST`/`RESPONSE` 结构，支持 XML 报文与 Base64 二进制传输。两条路线共享同一张路由配置表与全量报文日志，按接口逐个选择，互不冲突。
 
-**动态反射 · 类型化契约 · JSON / XML 双报文 · Base64 二进制传输**
+**动态反射 &nbsp;·&nbsp; 类型化契约 &nbsp;·&nbsp; JSON / XML 双报文 &nbsp;·&nbsp; Base64 二进制传输**
 
-**统一路由配置 · 全量报文日志 · 显式事务边界 · 鉴权留在业务函数内**
+**统一路由配置 &nbsp;·&nbsp; 全量报文日志 &nbsp;·&nbsp; 显式事务边界 &nbsp;·&nbsp; 鉴权留在业务函数内**
 
-**纯 ABAP 实现 · 零中间件部署 · 逐接口自由选路 · 可审计可重放**
+**纯 ABAP 实现 &nbsp;·&nbsp; 零中间件部署 &nbsp;·&nbsp; 逐接口自由选路 &nbsp;·&nbsp; 可审计可重放**
 
 #### 面向需要把 SAP 功能安全、可控地对外开放的集成团队
 
-**[核心能力](#核心能力)** · **[如何选择](#如何选择-dynamic-还是-typed)** · **[依赖与前置条件](#依赖与前置条件)** · **[安全与合规约定](#安全与合规约定)** · **[原始报文与扩展](#原始报文记录与后续扩展)** · **[已知限制](#已知限制)**
+**[核心能力](#核心能力)** &nbsp;·&nbsp; **[如何选择](#如何选择-dynamic-还是-typed)** &nbsp;·&nbsp; **[依赖与前置条件](#依赖与前置条件)** &nbsp;·&nbsp; **[安全与合规约定](#安全与合规约定)** &nbsp;·&nbsp; **[原始报文与扩展](#原始报文记录与后续扩展)** &nbsp;·&nbsp; **[已知限制](#已知限制)**
+
+</div>
 
 > 中文 | [English](README.en.md)
 

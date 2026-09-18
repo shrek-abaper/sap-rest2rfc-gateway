@@ -1,3 +1,5 @@
+<div align="center">
+
 # SAP REST2RFC Gateway
 
 [![GitHub Stars](https://img.shields.io/github/stars/shrek-abaper/sap-rest2rfc-gateway?style=flat-square&color=FFD700&logo=github&logoColor=white&label=Stars)](https://github.com/shrek-abaper/sap-rest2rfc-gateway/stargazers)
@@ -9,19 +11,21 @@
 
 ### An ABAP Gateway That Turns SAP RFC / BAPI into HTTP REST Endpoints
 
-#### _Pure ABAP, zero extra middleware — the RFC-to-REST bridge lives inside the SAP system itself._
+#### *Pure ABAP, zero extra middleware — the RFC-to-REST bridge lives inside the SAP system itself.*
 
 > No SAP PO/PI, no standalone integration middleware. Any registered RFC / BAPI can be exposed as a JSON API with a single config-table row and zero code changes; contract-first interfaces use a fixed `REQUEST`/`RESPONSE` structure with XML payloads and Base64 binary transport. Both routes share one routing table and full payload logging — choose per interface, without conflict.
 
-**Dynamic Reflection · Typed Contracts · JSON / XML Payloads · Base64 Binary Transport**
+**Dynamic Reflection &nbsp;·&nbsp; Typed Contracts &nbsp;·&nbsp; JSON / XML Payloads &nbsp;·&nbsp; Base64 Binary Transport**
 
-**Unified Routing Config · Full Payload Logging · Explicit Transaction Boundaries · Auth Stays in the Business Function**
+**Unified Routing Config &nbsp;·&nbsp; Full Payload Logging &nbsp;·&nbsp; Explicit Transaction Boundaries &nbsp;·&nbsp; Auth Stays in the Business Function**
 
-**Pure ABAP · Zero-Middleware Deployment · Per-Interface Route Choice · Auditable and Replayable**
+**Pure ABAP &nbsp;·&nbsp; Zero-Middleware Deployment &nbsp;·&nbsp; Per-Interface Route Choice &nbsp;·&nbsp; Auditable and Replayable**
 
 #### Built for Integration Teams Exposing SAP Functionality Safely and Under Control
 
-**[Core Capabilities](#core-capabilities)** · **[Choosing Between Routes](#choosing-between-dynamic-and-typed)** · **[Dependencies](#dependencies-and-prerequisites)** · **[Security Conventions](#security-and-compliance-conventions)** · **[Payload Logging & Extensibility](#raw-payload-logging-and-extensibility)** · **[Known Limitations](#known-limitations)**
+**[Core Capabilities](#core-capabilities)** &nbsp;·&nbsp; **[Choosing Between Routes](#choosing-between-dynamic-and-typed)** &nbsp;·&nbsp; **[Dependencies](#dependencies-and-prerequisites)** &nbsp;·&nbsp; **[Security Conventions](#security-and-compliance-conventions)** &nbsp;·&nbsp; **[Payload Logging & Extensibility](#raw-payload-logging-and-extensibility)** &nbsp;·&nbsp; **[Known Limitations](#known-limitations)**
+
+</div>
 
 > English | [中文（默认）](README.md)
 

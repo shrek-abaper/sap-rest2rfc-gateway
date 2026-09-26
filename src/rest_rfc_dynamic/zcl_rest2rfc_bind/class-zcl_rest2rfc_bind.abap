@@ -97,6 +97,7 @@ CLASS zcl_rest2rfc_bind DEFINITION
         iv_json           TYPE string
         iv_strict_missing TYPE abap_bool DEFAULT abap_true
         iv_bind_tables    TYPE abap_bool DEFAULT abap_true
+        iv_bind_exports   TYPE abap_bool DEFAULT abap_true
       EXPORTING
         et_parmbind       TYPE abap_func_parmbind_tab
         et_params         TYPE tt_param

@@ -156,7 +156,29 @@ Instantiation: Public
       ENDLOOP.
     ENDIF.
 
-*   ---- 6.6 Never return a partially bound parameter table --------
+*   ---- 6.6 Bind the EXPORTING parameters that were not supplied,
+*            so their values come back in the response -------------
+    IF iv_bind_exports = abap_true.
+      LOOP AT et_params INTO ls_param WHERE paramclass = 'E'.
+        IF line_exists( lt_bound[ table_line = ls_param-name ] ).
+          CONTINUE.
+        ENDIF.
+        create_param_data( EXPORTING is_param = ls_param
+                           IMPORTING er_data  = lr_data
+                                     ev_error = lv_cerr ).
+        IF lv_cerr IS NOT INITIAL.
+          CONTINUE.
+        ENDIF.
+        " Direction is inverted: an EXPORTING parameter of the function
+        " is abap_func_importing on the caller side
+        INSERT VALUE abap_func_parmbind( name  = ls_param-name
+                                         kind  = abap_func_importing
+                                         value = lr_data ) INTO TABLE et_parmbind.
+        INSERT ls_param-name INTO TABLE lt_bound.
+      ENDLOOP.
+    ENDIF.
+
+*   ---- 6.7 Never return a partially bound parameter table --------
     IF et_error IS NOT INITIAL.
       CLEAR et_parmbind.
     ENDIF.

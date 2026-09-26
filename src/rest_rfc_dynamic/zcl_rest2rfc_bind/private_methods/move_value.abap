@@ -69,9 +69,10 @@ Instantiation: Private
     TRY.
 *       GENERATE hands numbers back as type F; an F turned to string
 *       is scientific notation, which a packed target cannot parse.
-*       Route exponent notation through F, then MOVE converts to the
-*       real numeric type of the target.
-        IF contains( val = lv_val regex = `[eE]` ).
+*       For numeric targets only, route exponent notation through F,
+*       then MOVE converts to the real numeric type of the target.
+        IF lo_desc->type_kind CA c_numeric_kinds
+           AND contains( val = lv_val regex = `[eE][+-]?[0-9]` ).
           DATA(lv_num) = CONV f( lv_val ).
           cv_target = lv_num.
         ELSE.

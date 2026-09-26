@@ -67,7 +67,16 @@ Instantiation: Private
     ENDCASE.
 
     TRY.
-        cv_target = lv_val.
+*       GENERATE hands numbers back as type F; an F turned to string
+*       is scientific notation, which a packed target cannot parse.
+*       Route exponent notation through F, then MOVE converts to the
+*       real numeric type of the target.
+        IF contains( val = lv_val regex = `[eE]` ).
+          DATA(lv_num) = CONV f( lv_val ).
+          cv_target = lv_num.
+        ELSE.
+          cv_target = lv_val.
+        ENDIF.
       CATCH cx_root INTO DATA(lx_conv).
         add_error( EXPORTING iv_path    = iv_path
                              iv_code    = |VALUE_INVALID|
